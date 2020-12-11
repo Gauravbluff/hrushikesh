@@ -1,6 +1,8 @@
 **_Signup Input Format_**
 
 ```
+Signup URL: localhost:8000/user/signup  
+
 {
     "fullname":"Hrushikkesh Das",
     "contact":"7606810227",
@@ -20,6 +22,8 @@
 **_Login Input Format_**
 
 ```
+Login URL: localhost:8000/user/login
+
 {
     "contact":"7606810227"
 }

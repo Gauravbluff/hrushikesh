@@ -12,6 +12,7 @@ const app = express();
 mongoose.connect(process.env.DB_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
+  useCreateIndex: true,
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));

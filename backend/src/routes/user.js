@@ -15,14 +15,14 @@ router.get("/", (req, res) => {
       });
     })
     .catch((err) => {
-      res.status.json({
+      res.status(500).json({
         error: err,
       });
     });
 });
 
 // User Sign Up Route
-router.post("/signup", (req, res) => {
+router.post("/signup", (req, res, next) => {
   User.find({ contact: req.body.contact })
     .exec()
     .then((doc) => {
@@ -47,16 +47,21 @@ router.post("/signup", (req, res) => {
             });
           })
           .catch((err) => {
-            res.status.json({
+            res.status(500).json({
               error: err,
             });
           });
       }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
     });
 });
 
 // User Login Route
-router.post("/login", (req,res) => {
+router.post("/login", (req, res, next) => {
   User.find({ contact: req.body.contact })
     .exec()
     .then((doc) => {
@@ -82,6 +87,11 @@ router.post("/login", (req,res) => {
           token: token,
         });
       }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
     });
 });
 

@@ -12,11 +12,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "CONTACT IS REQUIRED!"],
     trim: true,
-    validate: {
-      validator: function (contactno) {
-        return /\d{10}/.test(contactno);
-      },
-      message: (props) => `${props.value} IS NOT A VALID PHONE NUMBER!`,
+    validate(contactno) {
+      if (!/\d{10}/.test(contactno)) {
+        throw new Error("INVALID PHONE NUMBER!");
+      }
     },
   },
   location: {
@@ -29,11 +28,10 @@ const userSchema = mongoose.Schema({
     pincode: {
       type: String,
       trim: true,
-      validate: {
-        validator: function (pincode) {
-          return /\d{6}/.test(pincode);
-        },
-        message: (props) => `${props.value} IS NOT A VALID PINCODE!`,
+      validate(pincode) {
+        if (!/\d{6}/.test(pincode)) {
+          throw new Error("INVALID PINCODE!");
+        }
       },
     },
     full_address: { type: String, trim: true },

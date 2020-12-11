@@ -4,13 +4,13 @@ const userSchema = mongoose.Schema({
   _userid: mongoose.Schema.Types.ObjectId,
   fullname: {
     type: String,
-    required: true,
+    required: [true, "FULLNAME IS REQUIRED!"],
     trim: true,
     maxlength: 64,
   },
   contact: {
     type: String,
-    required: true,
+    required: [true, "CONTACT IS REQUIRED!"],
     trim: true,
     validate: {
       validator: function (contactno) {

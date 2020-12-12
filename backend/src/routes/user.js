@@ -33,7 +33,7 @@ router.post("/signup", (req, res, next) => {
         });
       } else {
         const user = new User({
-          _userid: new mongoose.Types.ObjectId(),
+          _id: new mongoose.Types.ObjectId(),
           fullname: req.body.fullname,
           contact: req.body.contact,
           location: req.body.location,

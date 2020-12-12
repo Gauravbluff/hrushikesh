@@ -46,7 +46,6 @@ Login URL: localhost:8000/user/login
                 "full_address": "Udyabata, Dochoki, Paradip"
             },
             "_id": "5fd3d45e41508a2a706ead99",
-            "_userid": "5fd3d45e41508a2a706ead98",
             "fullname": "Hrushikkesh Das",
             "contact": "7606810227",
             "__v": 0

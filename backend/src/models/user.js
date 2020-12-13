@@ -25,15 +25,7 @@ const userSchema = mongoose.Schema({
     block: { type: String, trim: true },
     latitude: { type: String, trim: true },
     longitude: { type: String, trim: true },
-    pincode: {
-      type: String,
-      trim: true,
-      validate(pincode) {
-        if (!/\d{6}/.test(pincode)) {
-          throw new Error("INVALID PINCODE!");
-        }
-      },
-    },
+    pincode: { type: String, trim: true },
     full_address: { type: String, trim: true },
   },
 });

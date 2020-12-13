@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const userRoutes = require("./src/routes/user");
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -12,7 +12,6 @@ const app = express();
 mongoose.connect(process.env.DB_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
-  useCreateIndex: true,
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,4 +33,4 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(process.env.PORT || 8000);
+module.exports = app;

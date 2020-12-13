@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
-app.use("/user", userRoutes); // User Middleware
+app.use("/user", userRoutes); // User Route Handler
 
 // Undefined Route Handler
 app.use((req, res, next) => {
